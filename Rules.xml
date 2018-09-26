@@ -1,0 +1,88 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<Rules>
+
+    <Rule id="damaged">
+        <Question>Do you want to accidents car?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+
+    <Rule id="family">
+        <Question>Do you want to family car?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+
+    <Rule id="money">
+        <Question>Do you have 200.000 PLN for a car?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    
+    <Rule id="drivingGear">
+        <Question>Do you have front-wheel drive?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="on the front wheels"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="on the rear wheels"/>
+            </Selection>
+        </Answer>
+    </Rule>
+
+    <Rule id="gearBox">
+        <Question>Do you want to automatic gearbox?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="automatic"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="manual"/>
+            </Selection>
+        </Answer>
+    </Rule>
+
+
+    <Rule id="comfort">
+        <Question>What is more important for you?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="comfort"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="speed"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="luxury">
+        <Question>What feature is must-have for you?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="gps,bluetooth,dvd,automatic transmission,self-driving"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="nothing,abs,fog lights,central lock"/>
+            </Selection>
+        </Answer>
+    </Rule>
+</Rules>

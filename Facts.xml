@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Facts>
+    <Fact id="ModelS">
+        <Description value="Tesla Model S"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">true</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+    
+    <Fact id="530d">
+        <Description value="BMW 530d"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">false</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="mokka">
+        <Description value="Opel Mokka"/>
+        <Evals>
+            <Eval id="damaged">false</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">false</Eval>
+            <Eval id="drivingGear">true</Eval> <!-- napęd -->
+            <Eval id="gearBox">false</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="E-Pace">
+        <Description value="Jaguar E-Pace"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Jaguar">
+        <Description value="Jaguar XJ"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">false</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Focus">
+        <Description value="Ford Focus"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">false</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Passat">
+        <Description value="Volkswagen Passat"/>
+        <Evals>
+            <Eval id="damaged">false</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">false</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+
+    <!-- --------------------------------------------------- -->
+
+    <Fact id="Yearis">
+        <Description value="Toyota Yaris"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">true</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Golf">
+        <Description value="Volkswagen Golf"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">false</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="R8">
+        <Description value="Audi R8"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="A4">
+        <Description value="Audi A4"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Z3">
+        <Description value="BMW Z3"/>
+        <Evals>
+            <Eval id="damaged">false</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">false</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Xsara">
+        <Description value="Citroen Xsara"/>
+        <Evals>
+            <Eval id="damaged">false</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">true</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">false</Eval>
+            <Eval id="luxury">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="Mazda6">
+        <Description value="Mazda 6"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">true</Eval> <!-- napęd -->
+            <Eval id="gearBox">false</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="M8">
+        <Description value="BMW M8"/>
+        <Evals>
+            <Eval id="damaged">true</Eval> <!-- bezwypadkowy -->
+            <Eval id="family">false</Eval>
+            <Eval id="money">true</Eval>
+            <Eval id="drivingGear">false</Eval> <!-- napęd -->
+            <Eval id="gearBox">true</Eval> <!-- skrzynia biegów -->
+            <Eval id="comfort">true</Eval>
+            <Eval id="luxury">true</Eval>
+        </Evals>
+    </Fact>
+    
+
+</Facts>
