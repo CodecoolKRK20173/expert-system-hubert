@@ -32,8 +32,8 @@ public class OwnValidator{
 
     public static void main(String[] args){
 
-        validateXMLSchema("/home/hubert/Pulpit/expert-system-hubert/Rules.xsd", "/home/hubert/Pulpit/expert-system-hubert/Rules.xml");
-        validateXMLSchema("/home/hubert/Pulpit/expert-system-hubert/Facts.xsd", "/home/hubert/Pulpit/expert-system-hubert/Facts.xml");
+        System.out.println(validateXMLSchema("/home/hubert/Pulpit/expert-system-hubert/Rules.xsd", "/home/hubert/Pulpit/expert-system-hubert/Rules.xml"));
+        System.out.println(validateXMLSchema("/home/hubert/Pulpit/expert-system-hubert/Facts.xsd", "/home/hubert/Pulpit/expert-system-hubert/Facts.xml"));
 
     }
 }
