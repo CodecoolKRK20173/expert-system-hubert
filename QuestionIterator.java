@@ -25,10 +25,11 @@ public class QuestionIterator{
     public static void main(String[] args){
         QuestionIterator questionIterator = new QuestionIterator();
         
-        //Iterator<String> itr = questionIterator.iterator;
-        
-        while(questionIterator.iterator.hasNext()){
-            String temp = questionIterator.iterator.next();
+        Iterator<String> itr = questionIterator.iterator;
+  
+
+        while(itr.hasNext()){
+            String temp = itr.next();
             System.out.println(temp);
         }
     }

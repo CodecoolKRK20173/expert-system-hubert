@@ -1,62 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.BufferedReader;
-import java.io.FileReader;
-
 public class Question{
 
-    private List<String> splittedXML;
+    private String id;
+    private String question;
+    private Answer answer;
 
-    public Question(){
-        this.splittedXML = new ArrayList<>();
+    public Question(String id, String question, Answer answer){
+        this.id = id;
+        this.question = question;
+        this.answer = new Answer();
     }
 
-    public List<String> getSplittedXML(){
-        return this.splittedXML;
+    public String getId(){
+        //TO DO
+        return "";
     }
 
-    public Iterator<String> QuestionIterator(){
-        try (BufferedReader br = new BufferedReader(new FileReader("/home/hubert/Pulpit/expert-system-hubert/Rules.xml"))) {
-
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                String[] splittedTextXMLFile = line.split("\n");
-
-
-                for(String singleLine: splittedTextXMLFile){
-                    if(singleLine.toLowerCase().contains("<question>")){
-                        splittedXML.add(singleLine.substring(17 + 1, singleLine.length() - 11));
-                    }
-                }
-
-            }
-            Iterator<String> itr = splittedXML.iterator();
-
-            while(itr.hasNext()){
-                return itr;
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public String getQuestion(){
+        //TO DO
+        return "";
     }
 
+    public Answer getAnswer(){
+        //TO DO
+        return answer;
+    }
 
-    // public static void main(String[] args){
-    //     Question question = new Question();
-    //     Iterator<String> itr = question.QuestionIterator();
-
-    //     while(itr.hasNext()){
-    //         String temp = itr.next();
-    //         System.out.println(temp);
-    //     }
-    // }
+    public boolean getEvaluateAnswer(String input){
+        //TO DO
+        return true;
+    }
 }
