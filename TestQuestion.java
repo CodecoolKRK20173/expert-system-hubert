@@ -11,7 +11,7 @@ public class TestQuestion{
 
     private List<String> splittedXML;
 
-    public Question(){
+    public TestQuestion(){
         this.splittedXML = new ArrayList<>();
     }
 
