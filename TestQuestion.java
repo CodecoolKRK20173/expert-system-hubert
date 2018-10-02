@@ -1,62 +1,71 @@
-import java.util.ArrayList;
+import java.io.File;
 import java.util.List;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import org.w3c.dom.*;
+
+import javax.xml.parsers.*;
+import java.io.*;
+
+
 
 public class TestQuestion{
 
-    private List<String> splittedXML;
+    private List<String> xmlList = new ArrayList<>();
 
-    public TestQuestion(){
-        this.splittedXML = new ArrayList<>();
-    }
+    public void loadXmlDOcument(String xmlPath){
+        try{
+            File inputFile = new File("/home/hubert/Pulpit/expert-system-hubert/" + xmlPath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
-    public List<String> getSplittedXML(){
-        return this.splittedXML;
-    }
+            NodeList nList = doc.getElementsByTagName("Rule");
 
-    public Iterator<String> QuestionIterator(){
-        try (BufferedReader br = new BufferedReader(new FileReader("/home/hubert/Pulpit/expert-system-hubert/Rules.xml"))) {
+            for (int i = 0; i < nList.getLength(); i++) {
+                Node nNode = nList.item(i);
 
-            String line;
+                Element eElement = (Element) nNode;
+                xmlList.add("Rule id: " + eElement.getAttribute("id"));
+                xmlList.add("Question: " + eElement.getElementsByTagName("Question").item(0).getTextContent());
 
-            while ((line = br.readLine()) != null) {
-                String[] splittedTextXMLFile = line.split("\n");
+                Element nListAnswer = (Element)eElement.getElementsByTagName("Answer").item(0);
 
+                Element nListSelection = (Element)nListAnswer.getElementsByTagName("Selection").item(0);
+                Element nListSelection2 = (Element)nListAnswer.getElementsByTagName("Selection").item(1);
+                xmlList.add("Selection first: " + nListSelection.getAttribute("value"));
+                xmlList.add("Selection second: " + nListSelection2.getAttribute("value"));
 
-                for(String singleLine: splittedTextXMLFile){
-                    if(singleLine.toLowerCase().contains("<question>")){
-                        splittedXML.add(singleLine.substring(17 + 1, singleLine.length() - 11));
-                    }
-                }
-
+                Element nListSingleValue = (Element)nListSelection.getElementsByTagName("SingleValue").item(0);
+                xmlList.add("SingleValue: " + nListSingleValue.getAttribute("value"));
             }
-            Iterator<String> itr = splittedXML.iterator();
-
-            while(itr.hasNext()){
-                return itr;
+            for(int i=0; i<xmlList.size(); i++){
+                System.out.println(xmlList.get(i));
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        }catch(Exception e){
             e.printStackTrace();
         }
-        return null;
     }
 
 
-    // public static void main(String[] args){
-    //     Question question = new Question();
-    //     Iterator<String> itr = question.QuestionIterator();
 
-    //     while(itr.hasNext()){
-    //         String temp = itr.next();
-    //         System.out.println(temp);
-    //     }
-    // }
+
+
+
+
+
+
+
+    public static void main(String[] args){
+        TestQuestion testQuestion = new TestQuestion();
+
+       testQuestion.loadXmlDOcument("Rules.xml");
+    }
 }
