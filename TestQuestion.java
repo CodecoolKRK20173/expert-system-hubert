@@ -43,8 +43,26 @@ public class TestQuestion{
                 xmlList.add("Selection first: " + nListSelection.getAttribute("value"));
                 xmlList.add("Selection second: " + nListSelection2.getAttribute("value"));
 
+
                 Element nListSingleValue = (Element)nListSelection.getElementsByTagName("SingleValue").item(0);
-                xmlList.add("SingleValue: " + nListSingleValue.getAttribute("value"));
+                //Element nListSingleValue2 = (Element)nListSelection.getElementsByTagName("SingleValue").item(1);
+
+                // System.out.println(nListSingleValue.getNodeName());
+                // System.out.println(nListSingleValue.getAttribute("value"));
+
+                if((Element)nListSelection.getElementsByTagName("SingleValue").item(0) != null ||
+                   (Element)nListSelection.getElementsByTagName("SingleValue").item(1) != null){
+                    xmlList.add("SingleValue: " + nListSingleValue.getAttribute("value"));
+                    //xmlList.add("SingleValue: " + nListSingleValue2.getAttribute("value"));
+                }else{
+                    Element nListMultipleValue = (Element)nListSelection.getElementsByTagName("MultipleValue").item(0);
+                    xmlList.add("MultipleValue: " + nListMultipleValue.getAttribute("value"));
+
+                    //Element nListMultipleValue2 = (Element)nListSelection.getElementsByTagName("MultipleValue").item(1);
+                    //xmlList.add("MultipleValue: " + nListMultipleValue2.getAttribute("value"));
+                }
+
+                
             }
             for(int i=0; i<xmlList.size(); i++){
                 System.out.println(xmlList.get(i));
