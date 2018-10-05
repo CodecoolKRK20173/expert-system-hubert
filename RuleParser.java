@@ -1,6 +1,7 @@
-import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.File;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
@@ -8,15 +9,14 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.w3c.dom.*;
-
 import javax.xml.parsers.*;
 import java.io.*;
 
+public class RuleParser extends XMLParser{
 
-
-public class TestQuestion{
-
-    private List<String> xmlList = new ArrayList<>();
+    private RuleParser ruleParser = new RuleParser();
+    private RuleRepository ruleRepository = new RuleRepository();
+    protected List<String> xmlList = new ArrayList<>();
 
     public List<String> getXmlList(){
         return this.xmlList;
@@ -87,18 +87,21 @@ public class TestQuestion{
         }
     }
 
+    public RuleRepository getRuleRepository(){ 
+        this.ruleParser.loadXmlDOcument("Rules.xml");
+        List<String> parsedList = ruleParser.getXmlList();
 
-
-
-
-
-
-
-
-
-    public static void main(String[] args){
-        TestQuestion testQuestion = new TestQuestion();
-
-       testQuestion.loadXmlDOcument("Rules.xml");
+        for(int i=0; i<parsedList.size(); i++){
+            if(parsedList.get(i).contains("Rule id:")){
+                this.ruleRepository.ruleList.add(parsedList.get(i));
+            }else if(parsedList.get(i).contains("Question:")){
+                this.ruleRepository.questionList.add(parsedList.get(i));
+            }else if(parsedList.get(i).contains("SingleValue:")){
+                this.ruleRepository.singleValueList.add(parsedList.get(i));
+            }else if(parsedList.get(i).contains("MultipleValue:")){
+                this.ruleRepository.multipleValueList.add(parsedList.get(i));
+            }
+        }
+        return this.ruleRepository;
     }
 }
