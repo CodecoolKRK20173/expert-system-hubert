@@ -4,6 +4,12 @@ import java.util.List;
 
 public class Answer{
 
+    private List<String> addValueList = new ArrayList<>();
+
+    public List<String> getAddValueList(){
+        return this.addValueList;
+    }
+
     public boolean evaluateAnswerByInput(String input){
 
         input.toLowerCase();
@@ -28,17 +34,26 @@ public class Answer{
     }
 
     public void addValue(Value value){
-        //TO DO
-    }
+        List<String> singleValueList = value.getSingleValueList();
+        List<String> multipleValueList = value.getMultipleValueList();
 
-
-    public static void main(String[] args){
-        TestQuestion testQuestion = new TestQuestion();
-        testQuestion.loadXmlDOcument("Rules.xml");
-        List<String> XmlList = testQuestion.getXmlList();
-
-        for(int i=0; i<XmlList.size(); i++){
-            System.out.println(XmlList.get(i));
+        for(int i=0; i<singleValueList.size(); i++){
+            this.addValueList.add(singleValueList.get(i));
         }
+
+        for(int i=0; i<multipleValueList.size(); i++){
+            this.addValueList.add(multipleValueList.get(i));
+        } 
     }
+
+
+    // public static void main(String[] args){
+    //     TestQuestion testQuestion = new TestQuestion();
+    //     testQuestion.loadXmlDOcument("Rules.xml");
+    //     List<String> XmlList = testQuestion.getXmlList();
+
+    //     for(int i=0; i<XmlList.size(); i++){
+    //         System.out.println(XmlList.get(i));
+    //     }
+    // }
 }

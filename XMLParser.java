@@ -23,7 +23,6 @@ public abstract class XMLParser{
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getElementsByTagName("Rule");
 
@@ -70,7 +69,6 @@ public abstract class XMLParser{
 
                 Element nListEvals = (Element)eElement.getElementsByTagName("Evals").item(0);
 
-                //Element nListEval = (Element)nListEvals.getElementsByTagName("Eval").item(0).getTextContent();
                 xmlList.add("family: " + nListEvals.getElementsByTagName("Eval").item(0).getTextContent());
                 xmlList.add("money: " + nListEvals.getElementsByTagName("Eval").item(1).getTextContent());
                 xmlList.add("comfort: " + nListEvals.getElementsByTagName("Eval").item(2).getTextContent());

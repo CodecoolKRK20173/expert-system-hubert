@@ -14,8 +14,6 @@ import java.io.*;
 
 public class RuleParser extends XMLParser{
 
-    private RuleParser ruleParser = new RuleParser();
-    private RuleRepository ruleRepository = new RuleRepository();
     protected List<String> xmlList = new ArrayList<>();
 
     public List<String> getXmlList(){
@@ -29,7 +27,6 @@ public class RuleParser extends XMLParser{
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getElementsByTagName("Rule");
 
@@ -76,7 +73,6 @@ public class RuleParser extends XMLParser{
 
                 Element nListEvals = (Element)eElement.getElementsByTagName("Evals").item(0);
 
-                //Element nListEval = (Element)nListEvals.getElementsByTagName("Eval").item(0).getTextContent();
                 xmlList.add("family: " + nListEvals.getElementsByTagName("Eval").item(0).getTextContent());
                 xmlList.add("money: " + nListEvals.getElementsByTagName("Eval").item(1).getTextContent());
                 xmlList.add("comfort: " + nListEvals.getElementsByTagName("Eval").item(2).getTextContent());
@@ -88,20 +84,50 @@ public class RuleParser extends XMLParser{
     }
 
     public RuleRepository getRuleRepository(){ 
-        this.ruleParser.loadXmlDOcument("Rules.xml");
+        RuleParser ruleParser = new RuleParser();
+        RuleRepository ruleRepository = new RuleRepository();
+        ruleParser.loadXmlDOcument("Rules.xml");
         List<String> parsedList = ruleParser.getXmlList();
 
         for(int i=0; i<parsedList.size(); i++){
             if(parsedList.get(i).contains("Rule id:")){
-                this.ruleRepository.ruleList.add(parsedList.get(i));
+                ruleRepository.ruleList.add(parsedList.get(i));
             }else if(parsedList.get(i).contains("Question:")){
-                this.ruleRepository.questionList.add(parsedList.get(i));
+                ruleRepository.questionList.add(parsedList.get(i));
             }else if(parsedList.get(i).contains("SingleValue:")){
-                this.ruleRepository.singleValueList.add(parsedList.get(i));
+                ruleRepository.singleValueList.add(parsedList.get(i));
             }else if(parsedList.get(i).contains("MultipleValue:")){
-                this.ruleRepository.multipleValueList.add(parsedList.get(i));
+                ruleRepository.multipleValueList.add(parsedList.get(i));
             }
         }
-        return this.ruleRepository;
+        return ruleRepository;
     }
+
+    // public static void main(String[] args){
+    //     RuleParser ruleParser = new RuleParser();
+    //     RuleRepository ruleRepository = new RuleRepository();
+
+    //     ruleRepository = ruleParser.getRuleRepository();
+
+    //     List<String> rulelist = ruleRepository.getRuleList();
+    //     List<String> questionList = ruleRepository.getQuestionList();
+    //     List<String> singleValueList = ruleRepository.getSingleValueList();
+    //     List<String> multipleValueList = ruleRepository.getMultipleValueList();
+
+    //     for(int i=0; i<rulelist.size(); i++){
+    //         System.out.println(rulelist.get(i));
+    //     }
+
+    //     for(int i=0; i<questionList.size(); i++){
+    //         System.out.println(questionList.get(i));
+    //     }
+
+    //     for(int i=0; i<singleValueList.size(); i++){
+    //         System.out.println(singleValueList.get(i));
+    //     }
+
+    //     for(int i=0; i<multipleValueList.size(); i++){
+    //         System.out.println(multipleValueList.get(i));
+    //     }
+    // }
 }

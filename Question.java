@@ -4,6 +4,10 @@ public class Question{
     private String question;
     private Answer answer;
 
+    private RuleParser ruleParser = new RuleParser();
+    private RuleRepository ruleRepository = ruleParser.getRuleRepository();
+    public List<String> questionList = ruleRepository.getQuestionList();
+
     public Question(String id, String question, Answer answer){
         this.id = id;
         this.question = question;
@@ -20,6 +24,10 @@ public class Question{
 
     public Answer getAnswer(){
         return this.answer;
+    }
+
+    public List<String> getQuestionList(){
+        return this.questionList;
     }
 
     public boolean getEvaluateAnswer(String input){
