@@ -54,9 +54,9 @@ public class FactRepository{
 
         List<String> factTeslaList = new ArrayList<>();
 
-        factTeslaList.add(factTeslaFamilyList.get(0));
         factTeslaList.add(factTeslaMoneyList.get(0));
         factTeslaList.add(factTeslaComfortList.get(0));
+        factTeslaList.add(factTeslaFamilyList.get(0));
         factTeslaList.add(factTeslaLuxuryList.get(0));
 
         return factTeslaList;
@@ -73,9 +73,9 @@ public class FactRepository{
 
         List<String> factMokkaList = new ArrayList<>();
 
-        factMokkaList.add(factMokkaFamilyList.get(1));
         factMokkaList.add(factMokkaMoneyList.get(1));
         factMokkaList.add(factMokkaComfortList.get(1));
+        factMokkaList.add(factMokkaFamilyList.get(1));
         factMokkaList.add(factMokkaLuxuryList.get(1));
 
         return factMokkaList;
@@ -92,9 +92,9 @@ public class FactRepository{
 
         List<String> factLadaList = new ArrayList<>();
 
-        factLadaList.add(factLadaFamilyList.get(2));
         factLadaList.add(factLadaMoneyList.get(2));
         factLadaList.add(factLadaComfortList.get(2));
+        factLadaList.add(factLadaFamilyList.get(2));
         factLadaList.add(factLadaLuxuryList.get(2));
 
         return factLadaList;
@@ -110,35 +110,10 @@ public class FactRepository{
         return itr;
     }
 
-    // public static void main(String[] args){
-    //     FactRepository factRepository = new FactRepository();
+ 
+    public static void main(String[] args){
+        FactRepository factRepository = new FactRepository();
 
-    //     List<String> teslaList = factRepository.factTesla();
-    //     for(String element: teslaList){
-    //         System.out.println(element);
-    //     }
-
-    //     System.out.println("-----------------");
-
-    //     List<String> mokkaList = factRepository.factMokka();
-    //     for(String element: mokkaList){
-    //         System.out.println(element);
-    //     }
-
-    //     System.out.println("-------------------");
-
-    //     List<String> ladaList = factRepository.factLada();
-    //     for(String element: ladaList){
-    //         System.out.println(element);
-    //     }
-
-    //     System.out.println("-------------------");
-
-    //     Iterator<String> itr = factRepository.getIterator();
-
-    //     while(itr.hasNext()){
-    //         String temp = itr.next();
-    //         System.out.println(temp);
-    //     }
-    // }
+        factRepository.factLada();
+    }
 }

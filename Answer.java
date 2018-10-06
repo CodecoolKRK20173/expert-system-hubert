@@ -17,20 +17,19 @@ public class Answer{
         if(input.toLowerCase().equals("yes")){
             return true;
         }else if(input.toLowerCase().equals("no")){
-            return true;
+            return false;
         }else if(input.toLowerCase().equals("comfort")){
             return true;
         }else if(input.toLowerCase().equals("speed")){
-            return true;
+            return false;
         }else if(input.toLowerCase().equals("gps") || input.toLowerCase().equals("dvd") || input.toLowerCase().equals("bluetooth") || 
                  input.toLowerCase().equals("automatic transmission") || input.toLowerCase().equals("self-driving")){
             return true;
         }else if(input.toLowerCase().equals("abs") || input.toLowerCase().equals("nothing") || input.toLowerCase().equals("fog lights") ||
                  input.toLowerCase().equals("central lock")){
-            return true;
-        }else{
             return false;
         }
+        return false;
     }
 
     // Value value cannot be instantiated

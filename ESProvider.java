@@ -1,16 +1,12 @@
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
+
 import java.util.ArrayList;
 
 public class ESProvider{
 
-    FactParser factParser;
-    RuleParser ruleParser;
-
-    public ESProvider(FactParser factParser, RuleParser ruleParser){
-        this.factParser = factParser;
-        this.ruleParser = ruleParser;
-    }
 
     public void collectAnswers(){
 
@@ -40,6 +36,11 @@ public class ESProvider{
                 System.out.print("Enter answer: ");
                 input = scanner.next();
                 answersList.add(input);
+                if(input.equals("comfort")){
+                    answersList.add("true");
+                }else{
+                    answersList.add("false");
+                }
             }else if(i == 2){
                 System.out.println(multipleValueList.get(0) + " OR " + multipleValueList.get(1));
                 System.out.print("Enter answer: ");
@@ -50,12 +51,63 @@ public class ESProvider{
         return answersList;
     }
 
-    public static void main(String[] args){
-        RuleParser ruleParser = new RuleParser();
-        FactParser factParser = new FactParser();
-
-        ESProvider esProvider = new ESProvider(factParser, ruleParser);
-
+    public List<Boolean> evaluate(){
+        ESProvider esProvider = new ESProvider();
+        Answer answer = new Answer();
         List<String> answerList = esProvider.getAnswerByQuestion();
+
+        List<Boolean> collectAnswerList = new ArrayList<>();
+
+        collectAnswerList.add(answer.evaluateAnswerByInput(answerList.get(0)));
+        collectAnswerList.add(answer.evaluateAnswerByInput(answerList.get(1)));
+        collectAnswerList.add(answer.evaluateAnswerByInput(answerList.get(2)));
+        collectAnswerList.add(answer.evaluateAnswerByInput(answerList.get(3)));
+        
+        return collectAnswerList;
+    }
+
+    public String assignAnswerToCar(){
+        ESProvider esProvider = new ESProvider();
+        FactRepository factRepository = new FactRepository();
+        FactParser factParser = new FactParser();
+        FactRepository factRepository2 = factParser.getFactRepository();
+
+        List<String> descriptionList = factRepository2.getDescriptionList();
+
+        List<Boolean> booleanValuesList = esProvider.evaluate();
+        List<String> teslaList = factRepository.factTesla();
+        List<String> mokkaList = factRepository.factMokka();
+        List<String> ladaList = factRepository.factLada();
+
+        if(booleanValuesList.get(0).toString().equals(teslaList.get(0).toString()) && 
+           booleanValuesList.get(1).toString().equals(teslaList.get(1).toString()) && 
+           booleanValuesList.get(2).toString().equals("true") &&
+           booleanValuesList.get(3).toString().equals(teslaList.get(3).toString())){
+            return descriptionList.get(0);
+        }else if(booleanValuesList.get(0).toString().equals(mokkaList.get(0).toString()) && 
+                 booleanValuesList.get(1).toString().equals(mokkaList.get(1).toString()) && 
+                 booleanValuesList.get(2).toString().equals("false") &&
+                 booleanValuesList.get(3).toString().equals(mokkaList.get(3).toString())){
+            return descriptionList.get(1);
+        }else if(booleanValuesList.get(0).toString().equals(ladaList.get(0).toString()) && 
+                 booleanValuesList.get(1).toString().equals(ladaList.get(1).toString()) &&
+                 booleanValuesList.get(2).toString().equals("false") &&  
+                 booleanValuesList.get(3).toString().equals(ladaList.get(3).toString())){
+            return descriptionList.get(2);
+        }
+        return "I didn't found any cars";
+    }
+
+    public static void main(String[] args){
+        ESProvider esProvider = new ESProvider();
+
+        String nameCar = esProvider.assignAnswerToCar();
+        System.out.println("Name of car: " + nameCar);
+
+        // List<Boolean> list = esProvider.evaluate();
+
+        // for(Boolean element: list){
+        //     System.out.println(element);
+        // }
     }
 }
