@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class RuleRepository{
 
@@ -9,8 +10,6 @@ public class RuleRepository{
     public List<String> multipleValueList = new ArrayList<>();
 
     private List<String> addQuestionList = new ArrayList<>();
-
-    private RuleParser ruleParser = new RuleParser();
 
     public List<String> getRuleList(){
         return this.ruleList;
@@ -35,4 +34,26 @@ public class RuleRepository{
             this.addQuestionList.add(questionList.get(i));
         }
     }
+
+    public Iterator<String> getIterator(){
+        RuleParser ruleParser = new RuleParser();
+        RuleRepository ruleRepository = ruleParser.getRuleRepository();
+        List<String> questionList = ruleRepository.getQuestionList();
+
+        Iterator<String> itr = questionList.iterator();
+
+        return itr;
+    }
+
+
+    // public static void main(String[] args){
+    //     RuleRepository ruleRepository = new RuleRepository();
+
+    //     Iterator<String> itr = ruleRepository.getIterator();
+
+    //     while(itr.hasNext()){
+    //         String temp = itr.next();
+    //         System.out.println(temp);
+    //     }
+    // }
 }

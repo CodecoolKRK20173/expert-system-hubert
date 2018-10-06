@@ -33,6 +33,7 @@ public class Answer{
         }
     }
 
+    // Value value cannot be instantiated
     public void addValue(Value value){
         List<String> singleValueList = value.getSingleValueList();
         List<String> multipleValueList = value.getMultipleValueList();
@@ -48,12 +49,13 @@ public class Answer{
 
 
     // public static void main(String[] args){
-    //     TestQuestion testQuestion = new TestQuestion();
-    //     testQuestion.loadXmlDOcument("Rules.xml");
-    //     List<String> XmlList = testQuestion.getXmlList();
+    //     Answer answer = new Answer();
+    //     Value value = new Value();
+    //     answer.addValue(value);
+    //     List<String> list = answer.getAddValueList();
 
-    //     for(int i=0; i<XmlList.size(); i++){
-    //         System.out.println(XmlList.get(i));
+    //     for(String element: list){
+    //         System.out.println(element);
     //     }
     // }
 }

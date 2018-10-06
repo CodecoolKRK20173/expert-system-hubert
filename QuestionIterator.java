@@ -1,32 +1,33 @@
 import java.util.Iterator;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.Spliterators;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class QuestionIterator{
 
-    // private Question question = new Question();
-    // private int currentIndex = 0;
-    // private Iterator<String> iterator = question.QuestionIterator();
-    // private List<String> QuestionsXmlList = StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED), false).collect(Collectors.<String> toList());  
-    // private String[] arrayQuestionXml = QuestionsXmlList.toArray(new String[QuestionsXmlList.size()]); // dobrze 7 elementów
-    // private int currentSize = arrayQuestionXml.length; //dobrze rozmiar = 7
+    private RuleParser ruleParser = new RuleParser();
+    private RuleRepository ruleRepository = ruleParser.getRuleRepository();
+    private List<String> questionList = ruleRepository.getQuestionList();
+    private String[] questionArray = questionList.toArray(new String[questionList.size()]);
+    private int currentIndex = 0;
+    private int currentSize = questionList.size();
 
-    // public boolean hasNext(){
-    //     return currentIndex < currentSize && arrayQuestionXml[currentIndex] != null;
-    // }
+    public boolean hasNext(){
+        return currentIndex < currentSize && questionArray[currentIndex] != null;
+    }
 
-    // public String next(){
-    //     return arrayQuestionXml[currentIndex++];
-    // }
+    public String next(){
+        return questionArray[currentIndex++];
+    }
+
 
     // public static void main(String[] args){
     //     QuestionIterator questionIterator = new QuestionIterator();
-        
-    //     Iterator<String> itr = questionIterator.iterator;
-  
+
+    //     RuleParser ruleParser = new RuleParser();
+    //     RuleRepository ruleRepository = ruleParser.getRuleRepository();
+    //     List<String> questionList = ruleRepository.getQuestionList();
+    //     String[] questionArray = questionList.toArray(new String[questionList.size()]);
+
+    //     Iterator<String> itr = questionList.iterator();
 
     //     while(itr.hasNext()){
     //         String temp = itr.next();
