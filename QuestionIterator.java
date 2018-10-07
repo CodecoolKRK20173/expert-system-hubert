@@ -17,21 +17,4 @@ public class QuestionIterator{
     public String next(){
         return questionArray[currentIndex++];
     }
-
-
-    // public static void main(String[] args){
-    //     QuestionIterator questionIterator = new QuestionIterator();
-
-    //     RuleParser ruleParser = new RuleParser();
-    //     RuleRepository ruleRepository = ruleParser.getRuleRepository();
-    //     List<String> questionList = ruleRepository.getQuestionList();
-    //     String[] questionArray = questionList.toArray(new String[questionList.size()]);
-
-    //     Iterator<String> itr = questionList.iterator();
-
-    //     while(itr.hasNext()){
-    //         String temp = itr.next();
-    //         System.out.println(temp);
-    //     }
-    // }
 }

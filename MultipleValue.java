@@ -15,22 +15,4 @@ public class MultipleValue extends Value{
         }
         return multipleValueAnswerList;
     }
-
-    // public static void main(String[] args){
-    //     RuleParser ruleParser = new RuleParser();
-    //     RuleRepository ruleRepository = ruleParser.getRuleRepository();
-    //     List<String> multipleValueList = ruleRepository.getMultipleValueList();
-
-    //     MultipleValue multipleValue = new MultipleValue();
-
-    //     // for(int i=0; i<multipleValue.multipleValueList.size(); i++){
-    //     //     System.out.println(multipleValue.multipleValueList.get(i));
-    //     // }
-
-    //     List<String> getList = multipleValue.getMultipleValueAnswer();
-
-    //     for(String element: getList){
-    //         System.out.println(element);
-    //     }
-    // }
 }

@@ -1,16 +1,9 @@
 import java.util.List;
 import java.util.Scanner;
-
 import javax.swing.text.DefaultStyledDocument.ElementSpec;
-
 import java.util.ArrayList;
 
 public class ESProvider{
-
-
-    public void collectAnswers(){
-
-    }
 
     public List<String> getAnswerByQuestion(){
         Scanner scanner = new Scanner(System.in);
@@ -96,18 +89,5 @@ public class ESProvider{
             return descriptionList.get(2);
         }
         return "I didn't found any cars";
-    }
-
-    public static void main(String[] args){
-        ESProvider esProvider = new ESProvider();
-
-        String nameCar = esProvider.assignAnswerToCar();
-        System.out.println("Name of car: " + nameCar);
-
-        // List<Boolean> list = esProvider.evaluate();
-
-        // for(Boolean element: list){
-        //     System.out.println(element);
-        // }
     }
 }

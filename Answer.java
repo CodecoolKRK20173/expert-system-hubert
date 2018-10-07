@@ -36,7 +36,6 @@ public class Answer{
         return false;
     }
 
-    // Value value cannot be instantiated
     public void addValue(Value value){
         List<String> singleValueList = value.getSingleValueList();
         List<String> multipleValueList = value.getMultipleValueList();
@@ -49,16 +48,4 @@ public class Answer{
             this.addValueList.add(multipleValueList.get(i));
         } 
     }
-
-
-    // public static void main(String[] args){
-    //     Answer answer = new Answer();
-    //     Value value = new Value();
-    //     answer.addValue(value);
-    //     List<String> list = answer.getAddValueList();
-
-    //     for(String element: list){
-    //         System.out.println(element);
-    //     }
-    // }
 }

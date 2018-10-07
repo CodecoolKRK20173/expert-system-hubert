@@ -102,32 +102,4 @@ public class RuleParser extends XMLParser{
         }
         return ruleRepository;
     }
-
-    // public static void main(String[] args){
-    //     RuleParser ruleParser = new RuleParser();
-    //     RuleRepository ruleRepository = new RuleRepository();
-
-    //     ruleRepository = ruleParser.getRuleRepository();
-
-    //     List<String> rulelist = ruleRepository.getRuleList();
-    //     List<String> questionList = ruleRepository.getQuestionList();
-    //     List<String> singleValueList = ruleRepository.getSingleValueList();
-    //     List<String> multipleValueList = ruleRepository.getMultipleValueList();
-
-    //     for(int i=0; i<rulelist.size(); i++){
-    //         System.out.println(rulelist.get(i));
-    //     }
-
-    //     for(int i=0; i<questionList.size(); i++){
-    //         System.out.println(questionList.get(i));
-    //     }
-
-    //     for(int i=0; i<singleValueList.size(); i++){
-    //         System.out.println(singleValueList.get(i));
-    //     }
-
-    //     for(int i=0; i<multipleValueList.size(); i++){
-    //         System.out.println(multipleValueList.get(i));
-    //     }
-    // }
 }

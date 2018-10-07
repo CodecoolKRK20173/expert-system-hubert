@@ -15,22 +15,4 @@ public class SingleValue extends Value{
         }
         return singleValueAnswerList;
     }
-
-    // public static void main(String[] args){
-    //     RuleParser ruleParser = new RuleParser();
-    //     RuleRepository ruleRepository = ruleParser.getRuleRepository();
-    //     List<String> singleValueList = ruleRepository.getSingleValueList();
-
-    //     SingleValue singleValue = new SingleValue();
-
-    //     // for(int i=0; i<multipleValue.multipleValueList.size(); i++){
-    //     //     System.out.println(multipleValue.multipleValueList.get(i));
-    //     // }
-
-    //     List<String> getList = singleValue.getSingleValueAnswer();
-
-    //     for(String element: getList){
-    //         System.out.println(element);
-    //     }
-    // }
 }

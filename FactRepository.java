@@ -109,11 +109,4 @@ public class FactRepository{
 
         return itr;
     }
-
- 
-    public static void main(String[] args){
-        FactRepository factRepository = new FactRepository();
-
-        factRepository.factLada();
-    }
 }

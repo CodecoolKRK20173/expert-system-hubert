@@ -100,10 +100,4 @@ public class FactParser extends XMLParser{
         }
         return factRepository;
     }
-
-    // public static void main(String[] args){
-    //     FactParser factParser = new FactParser();
-
-    //     factParser.getFactRepository();
-    // }
 }

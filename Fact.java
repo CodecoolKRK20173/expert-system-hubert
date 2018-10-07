@@ -4,7 +4,6 @@ public class Fact{
 
     private String id;
     private String description;
-
     private FactParser factParser = new FactParser();
     private FactRepository factRepository = factParser.getFactRepository();
     public List<String> factList = factRepository.getDescriptionList();

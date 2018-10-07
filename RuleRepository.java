@@ -44,16 +44,4 @@ public class RuleRepository{
 
         return itr;
     }
-
-
-    // public static void main(String[] args){
-    //     RuleRepository ruleRepository = new RuleRepository();
-
-    //     Iterator<String> itr = ruleRepository.getIterator();
-
-    //     while(itr.hasNext()){
-    //         String temp = itr.next();
-    //         System.out.println(temp);
-    //     }
-    // }
 }

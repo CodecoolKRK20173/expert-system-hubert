@@ -6,7 +6,6 @@ public class Question{
     private String id;
     private String question;
     private Answer answer;
-
     private RuleParser ruleParser = new RuleParser();
     private RuleRepository ruleRepository = ruleParser.getRuleRepository();
     public List<String> questionList = ruleRepository.getQuestionList();
