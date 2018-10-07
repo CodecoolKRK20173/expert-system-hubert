@@ -81,17 +81,17 @@ public class ESProvider{
 
         if(booleanValuesList.get(0).toString().equals(teslaList.get(0).toString()) && 
            booleanValuesList.get(1).toString().equals(teslaList.get(1).toString()) && 
-           booleanValuesList.get(2).toString().equals("true") &&
+           booleanValuesList.get(2).toString().equals(teslaList.get(2).toString()) &&
            booleanValuesList.get(3).toString().equals(teslaList.get(3).toString())){
             return descriptionList.get(0);
         }else if(booleanValuesList.get(0).toString().equals(mokkaList.get(0).toString()) && 
                  booleanValuesList.get(1).toString().equals(mokkaList.get(1).toString()) && 
-                 booleanValuesList.get(2).toString().equals("false") &&
+                 booleanValuesList.get(2).toString().equals(mokkaList.get(2).toString()) &&
                  booleanValuesList.get(3).toString().equals(mokkaList.get(3).toString())){
             return descriptionList.get(1);
         }else if(booleanValuesList.get(0).toString().equals(ladaList.get(0).toString()) && 
                  booleanValuesList.get(1).toString().equals(ladaList.get(1).toString()) &&
-                 booleanValuesList.get(2).toString().equals("false") &&  
+                 booleanValuesList.get(2).toString().equals(ladaList.get(2).toString()) &&  
                  booleanValuesList.get(3).toString().equals(ladaList.get(3).toString())){
             return descriptionList.get(2);
         }

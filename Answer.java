@@ -28,6 +28,10 @@ public class Answer{
         }else if(input.toLowerCase().equals("abs") || input.toLowerCase().equals("nothing") || input.toLowerCase().equals("fog lights") ||
                  input.toLowerCase().equals("central lock")){
             return false;
+        }else if(input.toLowerCase().equals("true")){
+            return true;
+        }else if(input.toLowerCase().equals("false")){
+            return false;
         }
         return false;
     }
